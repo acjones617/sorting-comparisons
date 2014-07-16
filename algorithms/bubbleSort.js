@@ -18,7 +18,7 @@
     for (var i = 0; i < unsortedArray.length; i++) {
       sorted = true;
       for (var j = 1; j < unsortedArray.length - i; j++) {
-        if (comparison(unsortedArray[j - 1], unsortedArray[j]) < 0) {
+        if (comparison(unsortedArray[j - 1], unsortedArray[j]) > 0) {
           temp = unsortedArray[j];
           unsortedArray[j] = unsortedArray[j - 1];
           unsortedArray[j - 1] = temp;
@@ -32,12 +32,9 @@
     }
   }
 
-  var bubbleBigArray = window.bigArray.slice();
-  var initTime = (new Date()).getTime();
-  var results = bubbleSort(bubbleBigArray);
-  execTime = (new Date()).getTime() - initTime;
-
-  document.getElementById('bubble-time').innerText = execTime.toString();
+  window.addEventListener('load', function() {
+    window.sort('bubble', bubbleSort);
+  });
 })()
 
 // 100,000 length array sorting rand nums 1 - 1,000,000 takes 37,888 ms (37.9 ms)
