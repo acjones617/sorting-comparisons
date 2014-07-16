@@ -1,11 +1,10 @@
-(function() {
-    
-  var merge = function(leftArr, rightArr) {
+(function() {    
+  var merge = function (leftArr, rightArr, comparison){
     var result = [];
     var leftIndex = 0;
     var rightIndex = 0;
     while (leftIndex < leftArr.length && rightIndex < rightArr.length) {
-      if (leftArr[leftIndex] <= rightArr[rightIndex]) {
+      if (comparison(leftArr[leftIndex], rightArr[rightIndex]) > 0) {
         result.push(leftArr[leftIndex]);
         leftIndex++;
       } else {
@@ -24,29 +23,38 @@
     return result;
   }
 
-  var mergeSort = function(array) {
+  var mergeSort = function (unsortedArray, comparison){
     // implement natural mergeSort
-    // return array if sorted
+    // return unsortedArray if sorted
+    if (typeof comparison !== 'function') {
+      comparison = function(a, b) {
+        if (a < b) {
+          return 1;
+        } else if (a > b) {
+          return -1;
+        } else {
+          return 0;
+        }
+      }
+    }
+
     var sorted = true;
     var i = 1;
-    while (i < array.length && sorted) {
-      if (array[i] < array[i-1]) {
+    while (i < unsortedArray.length && sorted) {
+      if (unsortedArray[i] < unsortedArray[i-1]) {
         sorted = false;
       }
       i++;
     }
     if (sorted) {
-      return array;
+      return unsortedArray;
     } else {
-      var mid = Math.floor(array.length / 2);
-      return merge(mergeSort(array.slice(0, mid)), mergeSort(array.slice(mid)));
+      var mid = Math.floor(unsortedArray.length / 2);
+      return merge(mergeSort(unsortedArray.slice(0, mid), comparison), mergeSort(unsortedArray.slice(mid), comparison), comparison);;
     }
   };
 
-  var mergeBigArray = window.bigArray.slice();
-  var initTime = (new Date()).getTime();
-  var results = mergeSort(mergeBigArray);
-  execTime = (new Date()).getTime() - initTime;
-
-  document.getElementById('merge-time').innerText = execTime.toString();
+  window.addEventListener('load', function() {
+    window.sort('merge', mergeSort);
+  });
 })()
