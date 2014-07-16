@@ -1,0 +1,22 @@
+{
+  "name": "sorting-comparisons",
+  "version": "0.0.0",
+  "homepage": "https://github.com/acjones617/sorting-comparisons",
+  "authors": [
+    "Andrew Jones <acjones617@gmail.com>"
+  ],
+  "description": "Comparison of times for different sorting algorithms",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
