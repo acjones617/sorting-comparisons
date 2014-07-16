@@ -18,11 +18,11 @@
 
   var minNum = 0;
   var maxNum = 1000000;
-  var size = 100000;
+  var size = 20000;
 
   document.getElementById('array-min').innerText = minNum;
   document.getElementById('array-max').innerText = maxNum;
   document.getElementById('array-size').innerText = size;
 
-  window.bigArray = randomBigArray(size, minNum, size);
+  window.bigArray = randomBigArray(size, minNum, maxNum);
 })()
