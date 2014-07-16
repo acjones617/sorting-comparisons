@@ -6,7 +6,16 @@
     execTime = (new Date()).getTime() - initTime;
 
     document.getElementById(type+'-time').innerText = execTime.toString();
+  };
 
-    console.log(execTime, type, arrayCopy.length);
+  // if no comparison provided, use the below:
+  window.genericComparison = function(a, b) {
+    if (a < b) {
+      return 1;
+    } else if (a > b) {
+      return -1;
+    } else {
+      return 0;
+    }
   }
 })();
