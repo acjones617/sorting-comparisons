@@ -1,5 +1,5 @@
-(function() {
-  var selectionSort = function(unsortedArray, comparison) {
+(function(){
+  window.Sorts.prototype.selectionSort = function(unsortedArray, comparison) {
     if (typeof comparison !== 'function') {
       comparison = window.genericComparison;
     }
@@ -11,7 +11,7 @@
       nextEl = i;
       nextElValue = unsortedArray[i];
       for (var j = i; j < unsortedArray.length; j++) {
-        if (comparison(unsortedArray[j], nextElValue) > 0) {
+        if (comparison(nextElValue, unsortedArray[j]) > 0) {
           nextEl = j;
           nextElValue = unsortedArray[j];
         }
@@ -22,8 +22,4 @@
 
     return unsortedArray;
   }
-
-  window.addEventListener('load', function() {
-    window.sort('selection', selectionSort);
-  });
 })()
