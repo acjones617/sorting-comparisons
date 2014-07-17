@@ -21,11 +21,6 @@
   var maxNum = 1000000;
   var size = 10000;
 
-  document.getElementById('array-min').innerText = minNum;
-  document.getElementById('array-max').innerText = maxNum;
-  document.getElementById('array-size').innerText = size;
-
-
   // if no comparison provided, use the below:
   // if returns less than 0, sort a to lower index than b
   // if returns greater than 0, sort b to lower index than a
@@ -42,5 +37,8 @@
 
   window.Sorts = function() {
     this.bigArray = randomBigArray(size, minNum, maxNum);
+    this.minNum = minNum;
+    this.maxNum = maxNum;
+    this.size = size;
   };
 })()

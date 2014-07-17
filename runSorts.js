@@ -1,4 +1,4 @@
-(function() {
+(function(){
   var sort = function(type, algorithms) {
     var arrayCopy = algorithms.bigArray.slice();
     var initTime = (new Date()).getTime();
@@ -10,6 +10,12 @@
 
   window.addEventListener('load', function() {
     var algorithms = new window.Sorts();
+
+    document.getElementById('array-min').innerText = algorithms.minNum;
+    document.getElementById('array-max').innerText = algorithms.maxNum;
+    document.getElementById('array-size').innerText = algorithms.size;
+
+
 
     sort('bubble', algorithms);
     sort('selection', algorithms);
