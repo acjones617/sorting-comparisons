@@ -5,19 +5,26 @@
     }
     
     var result = [];
+    var nextEl;
     var nextElValue;
 
-    for (var i = 0; i < unsortedArray.length; i++) {
-      nextElValue = unsortedArray[i];
-      for (var j = i; j < unsortedArray.length; j++) {
-        if (comparison(nextElValue, unsortedArray[j]) > 0) {
-          nextElValue = unsortedArray[j];
+    while (unsortedArray.length) {
+      nextEl = 0;
+      nextElValue = unsortedArray[0];
+
+      for (var i = 0; i < unsortedArray.length; i++) {
+        if (comparison(nextElValue, unsortedArray[i]) > 0) {
+          nextEl = i;
+          nextElValue = unsortedArray[i];
         }
-        result[i] = nextElValue;
       }
+
+      result.push(nextElValue);
+      unsortedArray.splice(nextEl,1);
     }
 
+    unsortedArray = result;
     return result;
   }
 
-})()
+})();
