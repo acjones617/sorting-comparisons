@@ -15,12 +15,11 @@
     document.getElementById('array-max').innerText = algorithms.maxNum;
     document.getElementById('array-size').innerText = algorithms.size;
 
-
-
     sort('bubble', algorithms);
     sort('selection', algorithms);
     sort('insertion', algorithms);
     sort('merge', algorithms);
+    sort('quick', algorithms);
 
   });
 
