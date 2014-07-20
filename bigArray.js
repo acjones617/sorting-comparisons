@@ -17,6 +17,17 @@
     return result;
   }
 
+  var orderedBigArray = function(size, min, max) {
+    var result = [];
+    size = size || 100;
+    min = min || 0;
+    max = max || 100;
+    for (var i = 0; i < size; i++){
+      result.push(i);
+    }
+    return result;
+  }
+
   var minNum = 0;
   var maxNum = 1000000;
   var size = 10000;
@@ -37,6 +48,7 @@
 
   window.Sorts = function() {
     this.bigArray = randomBigArray(size, minNum, maxNum);
+    // this.orderedArray = orderedBigArray(size, minNum, maxNum);
     this.minNum = minNum;
     this.maxNum = maxNum;
     this.size = size;
