@@ -25,6 +25,17 @@
   };
 
   var pivot = function (unsortedArray, lo, hi){
+    // median of lo, hi, mid - slower on avg, but way faster if array already sorted
+    // return Math.floor((hi + lo) / 2);
+    // var mid = Math.floor((hi + lo)/2);
+    // var loValue = unsortedArray[lo];
+    // var midValue = unsortedArray[mid];
+    // var hiValue = unsortedArray[hi];
+    // if ((midValue <= loValue && midValue >= hiValue) || (midValue >= loValue && midValue <= hiValue)) {
+    //   return mid;
+    // } else if ((loValue <= midValue && loValue >= hiValue) || (loValue >= midValue && loValue <= hiValue)) {
+    //   return lo;
+    // }
     return hi;
   };
 
