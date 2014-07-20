@@ -122,5 +122,34 @@ describe('sorting functions', function () {
     });
   });
 
-  // Add more assertions here
+  describe('quick sort', function() {
+    var unsortedArray = [5,2,7,9,12,51,2,9];
+    var stableArray = [{'el1': 9, 'el2': 3}, {'el1': 2, 'el2': 5}, {'el1': 8, 'el2': 1}, {'el1': 1, 'el2': 5}];
+
+    it('exists', function() {
+      expect(algorithms.quickSort).to.be.a('function');
+    });
+
+    it('sorts correctly', function() {
+      var sortedArray = algorithms.quickSort(unsortedArray);
+      expect(sortedArray).to.eql([2,2,5,7,9,9,12,51]);
+    });
+
+    // it('sort is stable', function() {
+    //   var comparison = function(a, b) {
+    //     if (a.el2 > b.el2) {
+    //       return 1;
+    //     } else if (a.el2 < b.el2) {
+    //       return -1;
+    //     } else {
+    //       return 0;
+    //     }
+    //   }
+    //   var sortedArray = algorithms.quickSort(stableArray, comparison);
+    //   expect(sortedArray). to.eql([{'el1': 8, 'el2': 1}, {'el1': 9, 'el2': 3}, {'el1': 2, 'el2': 5}, {'el1': 1, 'el2': 5}]);
+    //   expect(sortedArray[2].el1).to.equal(2);
+    //   expect(sortedArray[3].el2).to.equal(5);
+    // });
+  });
+
 });
