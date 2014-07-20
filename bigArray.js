@@ -47,10 +47,11 @@
   }
 
   window.Sorts = function() {
+    this.newBigArray = randomBigArray;
+    this.arrayMinNum = minNum;
+    this.arrayMaxNum = maxNum;
+    this.arraySize = size;
     this.bigArray = randomBigArray(size, minNum, maxNum);
     // this.orderedArray = orderedBigArray(size, minNum, maxNum);
-    this.minNum = minNum;
-    this.maxNum = maxNum;
-    this.size = size;
   };
 })()

@@ -4,25 +4,38 @@
 </head>
 <body>
   <div class="big-array">
-    Array min: <span id="array-min"></span><br>
-    Array max: <span id="array-max"></span><br>
-    Array size: <span id="array-size"></span><br>
+    Array min: <input type="text" id="array-min"><br>
+    Array max: <input type="text" id="array-max"><br>
+    Array size: <input type="text" id="array-size"><br>
   </div>
   
   <div class="bubble">
+    <button id="bubble-run">Run Bubble Sort</button>
     Bubble Sort: <span id="bubble-time"></span>ms
   </div>
   <div class="selection">
+    <button id="selection-run">Run Selection Sort</button>
     Selection Sort: <span id="selection-time"></span>ms
   </div>
   <div class="insertion">
+    <button id="insertion-run">Run Insertion Sort</button>
     Insertion Sort: <span id="insertion-time"></span>ms
   </div>
   <div class="merge">
+    <button id="merge-run">Run Merge Sort</button>
     Merge Sort: <span id="merge-time"></span>ms
   </div>
   <div class="quick">
+    <button id="quick-run">Run Quick Sort</button>
     Quick Sort: <span id="quick-time"></span>ms
+  </div>
+  <div class="radix">
+    <button id="radix-run">Run Radix Sort</button>
+    Radix Sort: <span id="radix-time"></span>ms
+  </div>
+  <div class="binarySearch">
+    <button id="binarySearch-run">Run Binary Search Sort</button>
+    Binary Search Sort: <span id="binarySearch-time"></span>ms
   </div>
   <script src="./bigArray.js"></script>
   <script src="algorithms/bubbleSort.js"></script>
@@ -30,6 +43,8 @@
   <script src="algorithms/insertionSort.js"></script>
   <script src="algorithms/mergeSort.js"></script>
   <script src="algorithms/quickSort.js"></script>
+  <script src="algorithms/radixSort.js"></script>
+  <script src="algorithms/binarySearchSort.js"></script>
   <script src="./runSorts.js"></script>
 </body>
 
